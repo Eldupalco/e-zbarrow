@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-md-6 offset-3" style="margin-top: 10%">
                 <div class="card border-0 shadow-sm p-4">
-                    <div class="card-header bg-transparent border-bottom-0 h4 text-center">Login Using Your Credentials Given By School</div>
+                    <div class="card-header bg-transparent border-bottom-0 h4 text-center">Loginss Using Your Credentials Given By School</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
