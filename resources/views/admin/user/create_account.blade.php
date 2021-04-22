@@ -18,15 +18,15 @@
                   <form method="POST" action="{{ route('account.store') }}">
                     @csrf
 
-       
+
                       <div class="form-group row">
                         <div class="">
                          <label for="user_id" class="col-form-label">Student ID</label>
                           <input type="text" name="user_id" class="form-control rounded-0" value="{{$student->student_id}}">
                         </div>
                       </div>
-                   
-          
+
+
                         <div class="form-group row">
                           <div class="">
                              <label for="name" class="col-form-label">{{ __('Name') }}</label>
@@ -83,8 +83,8 @@
                               <input id="password-confirm" type="password" class="form-control rounded-0" name="password_confirmation" required autocomplete="new-password">
                           </div>
                       </div>
-          
-          
+
+
                         <div class="form-group">
                           <label>User Type</label>
                           <select name="userType" class="form-control rounded-0">
@@ -93,13 +93,13 @@
                               <option value="student">student</option>
                           </select>
                       </div>
-       
-                  
+
+
                    <div class="text-right">
-                       <a href="{{url('student')}}" class="btn btn-secondary">Cancel</a>
+                       <a href="{{secure_url('student')}}" class="btn btn-secondary">Cancel</a>
                        <button type="submit" class="btn btn-primary"> Save</button>
                      </div>
-       
+
                  </form>
                 </div>
             </div>
@@ -110,5 +110,5 @@
 @endsection
 
 @section('scripts')
-    
+
 @endsection

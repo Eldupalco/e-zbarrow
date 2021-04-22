@@ -22,8 +22,8 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="{{asset('assets/css/dataTables.min.css')}}">
-
+  <link rel="stylesheet" href="{{secure_asset('assets/css/dataTables.min.css')}}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body class="">
@@ -31,7 +31,7 @@
 
 
     <div class="sidebar" data-color="orange">
-    
+
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           ICT
@@ -48,7 +48,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-        
+
 
           <li class="{{ 'borrowed-book/'.Auth::user()->user_id == request()->path() ? 'active' : ''}}">
             <a href="/borrowed-book/{{ Auth::user()->user_id}}">
@@ -57,7 +57,7 @@
             </a>
           </li>
 
-        
+
         </ul>
       </div>
     </div>
@@ -155,7 +155,7 @@
 
         @yield('content')
 
-        
+
       </div>
 
 
@@ -169,8 +169,8 @@
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  
-  <script src="{{asset('assets/js/dataTables.min.js')}}" ></script>
+
+  <script src="{{secure_asset('assets/js/dataTables.min.js')}}" ></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->

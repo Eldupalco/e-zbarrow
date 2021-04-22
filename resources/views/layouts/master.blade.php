@@ -1,19 +1,3 @@
-<!--
-
-=========================================================
-* Now UI Dashboard - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +21,8 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="{{asset('assets/css/dataTables.min.css')}}">
-
+  <link rel="stylesheet" href="{{secure_asset('assets/css/dataTables.min.css')}}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body class="">
@@ -46,7 +30,7 @@
 
 
     <div class="sidebar" data-color="orange">
-    
+
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           ICT
@@ -189,7 +173,7 @@
 
         @yield('content')
 
-        
+
       </div>
 
 
@@ -202,8 +186,8 @@
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  
-  <script src="{{asset('assets/js/dataTables.min.js')}}" ></script>
+
+  <script src="{{secure_asset('assets/js/dataTables.min.js')}}" ></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->

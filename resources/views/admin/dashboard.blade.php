@@ -25,9 +25,9 @@
 
               @foreach ($bookRequest as $data)
 
-            
-                
-            
+
+
+
               <tr>
 
                 <td style="font-size: 12px !important;"> {{ $data->user->name}}</td>
@@ -35,22 +35,22 @@
                 <td style="font-size: 12px !important;" class="text-center"> {{ $data->borrow_quantity }}</td>
                 <td style="font-size: 12px !important;"> {{ $data->return_date }}</td>
                 <td style="font-size: 12px !important;"> {{ $data->borrow_status }}</td>
-               
+
 
 
                 @if($data->borrow_status == 'return')
-                  
-                    
+
+
                 @endif
-         
+
 
                 <td class="">
                   <div class="flex d-flex justify-content-end">
 
-                    <form action="{{ url('return-books-requested/'.$data->id) }}" method="POST" class=" m-1">
+                    <form action="{{ secure_url('return-books-requested/'.$data->id) }}" method="POST" class=" m-1">
 
                         {{ csrf_field() }}
-                        
+
                         {{method_field('PUT')}}
 
                       <input type="hidden" name="id" value="{{$data->id}}">
@@ -59,13 +59,13 @@
 
                     </form>
 
-                      
-                      <a href="{{ url('request-books-update/'.$data->id) }}" class="btn btn-success btn-sm m-1"> <i class="fas fa-edit"></i></a>
-                
+
+                      <a href="{{ secure_url('request-books-update/'.$data->id) }}" class="btn btn-success btn-sm m-1"> <i class="fas fa-edit"></i></a>
+
 
                   {{-- <a href="/role-delete/{{$data->id}}" class="btn btn-danger"> Delete</a> --}}
 
-                    <form action="{{url('delete-book/'.$data->id)}}" method="POST" class=" m-1">
+                    <form action="{{secure_url('delete-book/'.$data->id)}}" method="POST" class=" m-1">
 
                       {{-- security token purpose --}}
                       {{ csrf_field() }}
@@ -79,21 +79,21 @@
 
                   </div>
                 </td>
-                
+
               </tr>
               @endforeach
-              
-             
+
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 @endsection
 
 @section('scripts')
-    
+
 @endsection
