@@ -14,8 +14,8 @@
   
                         <div class="form-group row">
                           <div class="">
-                           <label for="user_id" class="col-form-label">Student ID</label>
-                            <input type="text" name="user_id" class="form-control rounded-0" value="{{$student->student_id}}">
+                           <label for="user_id" class="col-form-label">YOUR ID</label>
+                            <input type="text" name="user_id" class="form-control rounded-0">
                           </div>
                         </div>
   
@@ -23,7 +23,7 @@
                           <div class="form-group row">
                             <div class="">
                                <label for="name" class="col-form-label">{{ __('Name') }}</label>
-                                <input id="name" type="text" class="form-control rounded-0 @error('name') is-invalid @enderror" name="name" value="{{ $student->last_name }} {{$student->first_name }} {{$student->middle_name}}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control rounded-0 @error('name') is-invalid @enderror" name="name" value="" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

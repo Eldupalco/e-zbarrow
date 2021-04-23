@@ -95,14 +95,14 @@
 
                     <td class="">
                         <div class="flex d-flex float-right">
-                          <a href="{{url('create-faculty-account/'.$data->id)}}" class="btn btn-muted btn-sm btn-icon m-1"> <i class="fas fa-user-circle"></i></a>
+                          <a href="{{secure_url('create-faculty-account/'.$data->id)}}" class="btn btn-muted btn-sm btn-icon m-1"> <i class="fas fa-user-circle"></i></a>
 
-                            <a href="{{url('edit-faculty/'.$data->id)}}" class="btn btn-success btn-sm btn-icon m-1"> <i class="fas fa-edit"></i></a>
+                            <a href="{{secure_url('edit-faculty/'.$data->id)}}" class="btn btn-success btn-sm btn-icon m-1"> <i class="fas fa-edit"></i></a>
                       
 
                         {{-- <a href="/role-delete/{{$data->id}}" class="btn btn-danger"> Delete</a> --}}
     
-                        <form action="{{url('delete-faculty/'.$data->id)}}" method="POST" class="m-1">
+                        <form action="{{secure_url('delete-faculty/'.$data->id)}}" method="POST" class="m-1">
     
                             {{-- security token purpose --}}
                             {{ csrf_field() }}
