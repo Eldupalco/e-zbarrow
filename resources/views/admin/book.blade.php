@@ -74,22 +74,19 @@
         <h4 class="card-title"> Books</h4>
 
        <div class="d-flex d-inline justify-content-end">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
-        <div class="col-md-4">
-          <input type="text" name="q" class="form-control rounded-0">
-
-        </div>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
+    
        </div>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped" >
+          <table class="table" >
             <thead class=" text-primary">
               <tr class="m-0">
-                <th style="font-size: 16px !important;">Author Name</th>
-                <th style="font-size: 16px !important;">Book Name</th>
-                <th style="font-size: 16px !important;" class="text-center">Status</th>
-                <th style="font-size: 16px !important;" class="text-center">Stock</th>
+                <th style="font-size: 12px !important;">Author Name</th>
+                <th style="font-size: 12px !important;">Book Name</th>
+                <th style="font-size: 12px !important;" class="text-center">Status</th>
+                <th style="font-size: 12px !important;" class="text-center">Stock</th>
               </tr>
             </thead>
             <tbody>
@@ -103,7 +100,7 @@
 
                     <td class="">
                         <div class="flex d-flex float-right">
-                            <a href="{{url('edit-book/'.$data->id)}}" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i></a>
+                            <a href="{{url('edit-book/'.$data->id)}}" class="btn btn-success btn-sm btn-icon"> <i class="fas fa-edit"></i></a>
                       
 
                         {{-- <a href="/role-delete/{{$data->id}}" class="btn btn-danger"> Delete</a> --}}
@@ -116,7 +113,7 @@
                             {{ method_field('DELETE') }}
     
                             <input type="hidden" name="id" value="{{$data->id}}">
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm btn-icon"><i class="far fa-trash-alt"></i></button>
     
                         </form>
                         </div>

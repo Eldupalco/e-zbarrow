@@ -70,7 +70,7 @@
       <div class="card-header">
         <h4 class="card-title"> Faculty </h4>
 
-        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
+        <button type="button" class="btn btn-primary btn-sm float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
 
       </div>
       <div class="card-body">
@@ -78,8 +78,8 @@
           <table  class="table table-sm" >
             <thead class=" text-primary">
 
-              <th>Faculty ID</th>
-              <th>FullName</th>
+              <th style="font-size: 12px;" class="p-1">Faculty ID</th>
+              <th style="font-size: 12px;" class="p-1">FullName</th>
               {{-- <th>First Name</th>
               <th>Middle Name</th> --}}
 
@@ -88,19 +88,21 @@
                 @foreach ($faculty as $data )
 
                 <tr>
-                    <td>{{$data->faculty_id}}</td>
-                    <td>{{$data->last_name }} {{$data->first_name}} {{$data->middle_name}}.</td>
+                    <td style="font-size: 12px;" class="text-capitalize p-1">{{$data->faculty_id}}</td>
+                    <td style="font-size: 12px;" class="text-capitalize p-1">{{$data->last_name }} {{$data->first_name}} {{$data->middle_name}}.</td>
                    
                   
 
                     <td class="">
                         <div class="flex d-flex float-right">
-                            <a href="{{url('edit-faculty/'.$data->id)}}" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i></a>
+                          <a href="{{url('create-faculty-account/'.$data->id)}}" class="btn btn-muted btn-sm btn-icon m-1"> <i class="fas fa-user-circle"></i></a>
+
+                            <a href="{{url('edit-faculty/'.$data->id)}}" class="btn btn-success btn-sm btn-icon m-1"> <i class="fas fa-edit"></i></a>
                       
 
                         {{-- <a href="/role-delete/{{$data->id}}" class="btn btn-danger"> Delete</a> --}}
     
-                        <form action="{{url('delete-faculty/'.$data->id)}}" method="POST" class="ml-1">
+                        <form action="{{url('delete-faculty/'.$data->id)}}" method="POST" class="m-1">
     
                             {{-- security token purpose --}}
                             {{ csrf_field() }}
@@ -108,7 +110,7 @@
                             {{ method_field('DELETE') }}
  
                             <input type="hidden" name="id" value="{{$data->id}}">
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm btn-icon"><i class="far fa-trash-alt"></i></button>
     
                         </form>
                         </div>

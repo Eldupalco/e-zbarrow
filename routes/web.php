@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 
     Route::get('/create-account/{id}','App\Http\Controllers\MyAdmin\DashboardController@createAccount');
+    Route::get('/create-faculty-account/{id}','App\Http\Controllers\MyAdmin\DashboardController@createFacultyAccount');
     
     Route::get('/book','App\Http\Controllers\MyAdmin\BookController@indexBook');
     Route::post('/save-book', 'App\Http\Controllers\MyAdmin\BookController@saveBook');
@@ -80,18 +81,17 @@ Route::group(['middleware' => 'auth'], function() {
         
     });
 
-    Route::resource('account', 'App\Http\Controllers\AccountController');
+    Route::resource('accountStudent', 'App\Http\Controllers\AccountController');
+    Route::resource('accountFaculty', 'App\Http\Controllers\FacultyAccountController');
 
 });
 
 
 
+// Auth::routes();
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

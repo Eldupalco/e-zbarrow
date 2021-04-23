@@ -12,17 +12,17 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    Create Student Account
+                    Create Faculty Account
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="{{ route('accountStudent.store') }}">
+                  <form method="POST" action="{{ route('accountFaculty.store') }}">
                     @csrf
 
 
                       <div class="form-group row">
                         <div class="">
                          <label for="user_id" class="col-form-label">Student ID</label>
-                          <input type="text" name="user_id" class="form-control rounded-0" value="{{$student->student_id}}">
+                          <input type="text" name="user_id" class="form-control rounded-0" value="{{$faculty->faculty_id}}">
                         </div>
                       </div>
 
@@ -30,7 +30,7 @@
                         <div class="form-group row">
                           <div class="">
                              <label for="name" class="col-form-label">{{ __('Name') }}</label>
-                              <input id="name" type="text" class="form-control rounded-0 @error('name') is-invalid @enderror" name="name" value="{{ $student->last_name }} {{$student->first_name }} {{$student->middle_name}}" required autocomplete="name" autofocus>
+                              <input id="name" type="text" class="form-control rounded-0 @error('name') is-invalid @enderror" name="name" value="{{$faculty->last_name }} {{$faculty->first_name}} {{$faculty->middle_name}}" required autocomplete="name" autofocus>
                               @error('name')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -96,7 +96,7 @@
 
 
                    <div class="text-right">
-                       <a href="{{secure_url('student')}}" class="btn btn-secondary">Cancel</a>
+                       <a href="{{secure_url('faculty')}}" class="btn btn-secondary">Cancel</a>
                        <button type="submit" class="btn btn-primary"> Save</button>
                      </div>
 

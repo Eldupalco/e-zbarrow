@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\MyAdmin;
 
 use App\Models\User;
+use App\Models\Faculty;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,6 +31,12 @@ class DashboardController extends Controller
       return view('admin.user.create_account')->with('student',$student);
    }
 
+   public function createFacultyAccount(Request $request, $id)
+   {
+      $faculty = Faculty::findOrFail($id);
+      return view('admin.faculty.faculty_account')->with('faculty',$faculty);
+   }
+
    public function registerUpdate(Request $request, $id)
    {
       $users = User::find($id);
@@ -47,7 +54,6 @@ class DashboardController extends Controller
       $users->delete();
 
       return redirect('/register-roles')->with('Success','Your data is successfully Deleted!');
-      
    }
 }
 

@@ -27,7 +27,7 @@
               <tr>
                 
                 <td> {{ $data->book->author_name }}</td>
-                <td> {{ $data->book->book_description}}</td>
+                <td> {{ $data->book->created_at}}</td>
                 <td> {{ $data->borrow_quantity }}</td>
                 <td> {{ $data->borrow_status }}</td>
 

@@ -27,11 +27,9 @@ class RequestBookController extends Controller
         return view('request.book_request', compact('book', 'id'));
     }
 
-    public function borrowBook(Request $request){
+    public function borrowedBook(Request $request){
 
-        // BookRequest::create($request->except('_token') + ['borrower_id' => Auth::id()]);
-        // dd($request->all());
-
+    
         $borrowRequest =new BookRequest();
         $borrowRequest->book_id = $request->input('book_id');
         $borrowRequest->borrower_id = $request->input('borrower_id');

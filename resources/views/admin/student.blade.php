@@ -108,35 +108,31 @@
       <div class="card-header">
         <h4 class="card-title"> Student </h4>
 
-        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
+        <button type="button" class="btn btn-primary btn-sm float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
 
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table  class="table table-striped" >
+          <table  class="table" >
 
             <thead class="text-primary">
 
-              <th>Student ID</th>
-              <th>Last Name</th>
-              <th>First Name</th>
-              <th>Middle Name</th>
+              <th style="font-size: 12px;" class="p-1">Student ID</th>
+              <th style="font-size: 12px;" class="p-1">Full Name</th>
 
             </thead>
             <tbody>
                 @foreach ($student as $data )
 
                 <tr>
-                  <td>{{$data->student_id}}</td>
-                    <td>{{$data->last_name}}</td>
-                    <td>{{$data->first_name}}</td>
-                    <td>{{$data->middle_name}}</td>
-
-
+                  <td class="text-capitalize p-1 m-0" style="font-size: 12px;">{{$data->student_id}}</td>
+                  <td class="text-capitalize p-1 m-0" style="font-size: 12px;">{{$data->last_name}} {{$data->first_name}} {{$data->middle_name}}</td>
+                  
                     <td class="">
                         <div class="flex d-flex float-right">
-                            <a href="{{secure_url('create-account/'.$data->id)}}" class="btn btn-muted btn-md m-1"> <i class="fas fa-user-circle"></i></a>
-                            <a href="{{secure_url('edit-student/'.$data->id)}}" class="btn btn-success btn-md m-1"> <i class="fas fa-edit"></i></a>
+
+                            <a href="{{secure_url('create-account/'.$data->id)}}" class="btn btn-muted btn-sm m-1 btn-icon"> <i class="fas fa-user-circle"></i></a>
+                            <a href="{{secure_url('edit-student/'.$data->id)}}" class="btn btn-success btn-sm m-1 btn-icon"> <i class="fas fa-edit"></i></a>
 
 
                         {{-- <a href="/role-delete/{{$data->id}}" class="btn btn-danger"> Delete</a> --}}
@@ -149,15 +145,11 @@
                             {{ method_field('DELETE') }}
 
                             <input type="hidden" name="id" value="{{$data->id}}">
-                            <button type="submit" class="btn btn-danger btn-md"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm btn-icon"><i class="far fa-trash-alt"></i></button>
 
                         </form>
-
                         </div>
                     </td>
-
-
-
                   </tr>
 
 

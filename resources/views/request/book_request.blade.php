@@ -18,6 +18,7 @@
                     <form action="/to-borrowed-book" method="POST">
                         <input type="hidden" name="book_id" value="{{ $id }}">
                         <input type="hidden" name="borrower_id" value="{{ Auth::user()->user_id }}">
+                        <input type="hidden" name="borrow_status" value="Pending">
                         {{ csrf_field() }}
                         {{method_field('PUT')}}
                         
@@ -41,9 +42,8 @@
            
                          <div class="form-group">
                            <label>Book status</label>
-                           <select name="borrow_status" class="form-control rounded-0">
-                               <option value="available">Available</option>
-                               <option value="not available">Not available</option>
+                           <select name="book_status" class="form-control rounded-0">
+                               <option value="{{$book->book_status}}">{{$book->book_status}}</option>
                            </select>
                        </div>
            

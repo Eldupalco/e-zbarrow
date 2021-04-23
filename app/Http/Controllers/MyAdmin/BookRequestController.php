@@ -10,9 +10,14 @@ use App\Http\Controllers\Controller;
 class BookRequestController extends Controller {
 
     public function requestBook(){
-        $bookRequest = BookRequest::with(['user', 'book'])->get();
+        $bookRequest = BookRequest::with(['user', 'book'])->where('borrow_status' ,'=' ,'Pending')->paginate(1);
+        $bookRequestApprove = BookRequest::with(['user', 'book'])->where('borrow_status' ,'=' ,'Approve')->get();
+        $bookRequestReturn = BookRequest::with(['user', 'book'])->where('borrow_status' ,'=' ,'Return')->get();
         // dd($bookRequest);
-        return view('admin.dashboard')->with('bookRequest', $bookRequest);
+        return view('admin.dashboard')
+        ->with('bookRequest', $bookRequest)
+        ->with('bookRequestReturn', $bookRequestReturn)
+        ->with('bookRequestApprove', $bookRequestApprove);
     }
 
     public function requestBookUpdate($id){

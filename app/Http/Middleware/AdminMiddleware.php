@@ -18,18 +18,6 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        // if(Auth::user()->userType == 'admin')
-        // {
-        //     return $next($request);
-        // }
-        // elseif(Auth::user()->userType == 'student')
-        // {
-        //     return $next($request);
-        // }
-        // else
-        // {
-        //     return redirect('/home');
-        // }
 
         if(Auth::user()->userType == 'admin')
         {
