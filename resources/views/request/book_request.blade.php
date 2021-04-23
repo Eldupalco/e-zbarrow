@@ -60,7 +60,7 @@
            
                       
                        <div class="text-right">
-                           <a href="{{url('user_home')}}" class="btn btn-secondary">Cancel</a>
+                           <a href="{{secure_url('user_home')}}" class="btn btn-secondary">Cancel</a>
                            <button type="submit" class="btn btn-primary">Save</button>
                          </div>
            
