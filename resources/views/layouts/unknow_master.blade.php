@@ -33,11 +33,11 @@
     <div class="sidebar" data-color="orange">
 
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          ICT
+        <a href="#" class="simple-text logo-mini">
+          
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          FUN DA
+        <a href="#" class="simple-text logo-normal">
+          e-zborrow
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">

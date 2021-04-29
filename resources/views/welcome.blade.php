@@ -19,7 +19,7 @@
 <body class="">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Mobile ICT Manual</a>
+        <a class="navbar-brand" href="#">e-zborrow</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,12 +61,12 @@
     </div>
 </nav><!-- end of nav -->
 
-<div style="background: url({{ asset('assets/img/bg.jpg') }}) no-repeat; background-size: cover;width: 100%; height: 92vh;">
+<div style="background: url({{ asset('assets/img/bgg.jpg') }}) no-repeat; background-size: cover;width: 100%; height: 92vh;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-3" style="margin-top: 10%">
                 <div class="card border-0 shadow-sm p-4">
-                    <div class="card-header bg-transparent border-bottom-0 h4 text-center">Loginss Using Your Credentials Given By School</div>
+                    <div class="card-header bg-transparent border-bottom-0 h4 text-center">Login Using Your Credentials Given By School</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf

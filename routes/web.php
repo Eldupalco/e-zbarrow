@@ -65,7 +65,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/request-books-update/{id}', 'App\Http\Controllers\MyAdmin\BookRequestController@requestBookUpdate');
     Route::put('/update-books-requested/{id}', 'App\Http\Controllers\MyAdmin\BookRequestController@requestBookUpdated');
     Route::put('/return-books-requested/{id}', 'App\Http\Controllers\MyAdmin\BookRequestController@requestBookReturn');
-    
+   
+   
+    Route::get('/fetch-approve-requested', 'App\Http\Controllers\MyAdmin\BookRequestController@fetchApproveBooksRequested');
+    Route::get('/fetch-borrowed-requested', 'App\Http\Controllers\MyAdmin\BookRequestController@fetchBorrowednBooksRequested');
+    Route::get('/fetch-pending-requested', 'App\Http\Controllers\MyAdmin\BookRequestController@fetchPendingBooksRequested');
+    Route::get('/fetch-return-requested', 'App\Http\Controllers\MyAdmin\BookRequestController@fetchReturnBooksRequested');
+
     });
 
 
